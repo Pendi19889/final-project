@@ -1,30 +1,35 @@
+:root {
+  --white: #f8fafc;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0px;
-  color: #f1f5f9;
+  color: var(--white);
   background-image: url("/img/cora-leach-YFs2fACDMR8-unsplash.jpg");
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-size: cover;
   background-repeat: no-repeat, repeat;
 }
 
 .nav {
   height: 50px;
-  width: 75%;
-  margin: 10px auto;
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+  overflow: hidden;
+  /* From https://css.glass */
+  background: rgba(55, 65, 81, 0.24);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(3.5px);
-  -webkit-backdrop-filter: blur(3.5px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .nav > .nav-header {
@@ -34,7 +39,7 @@ body {
 .nav > .nav-header > .nav-title {
   display: inline-block;
   font-size: 24px;
-  color: #f1f5f9;
+  color: var(--white);
   font-weight: 600;
   padding: 10px 10px 10px 10px;
 }
@@ -53,7 +58,7 @@ body {
   display: inline-block;
   margin: 13px 10px 13px 10px;
   text-decoration: none;
-  color: #f1f5f9;
+  color: var(--white);
   font-weight: 500;
 }
 
@@ -81,38 +86,60 @@ body {
 .nav > #nav-check {
   display: none;
 }
-
+/* ini css bagian body */
 .container {
   width: 80%;
   margin: auto;
   display: flex;
+  z-index: 0;
 }
 
 .card {
-  border-radius: 5px;
+  position: relative;
+  z-index: -10;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  /* From https://css.glass */
+  background: rgba(55, 65, 81, 0.32);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(55, 65, 81, 0.04);
 }
 .card > div {
   margin-bottom: 10px;
 }
+
 .card-head {
   padding: 10px 16px 8px 16px;
-  background-color: #bae6fd;
-  font-size: large;
+  font-size: xx-large;
   font-weight: 600;
 }
 
 .card-body {
   padding-left: 16px;
   padding-right: 16px;
+  font-weight: 200;
+  color: #f9fafb;
 }
 .card-footer {
   padding: 0px 16px 10px 16px;
 }
+/* akhir bagian body css */
 
+/* css untuk resposive */
 @media (max-width: 800px) {
+  body {
+    background-size: cover;
+    background-image: url("/img/background-android.jpg");
+  }
+
+  .nav {
+    width: 100%;
+    overflow: visible;
+  }
+
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;
@@ -136,25 +163,33 @@ body {
     border-top: 2px solid #eee;
   }
   .nav > .nav-links {
-    position: absolute;
+    position: fixed;
     display: block;
     width: 100%;
-    background-color: #333;
+    /* background-color: #333; */
     height: 0px;
     transition: all 0.3s ease-in;
     overflow-y: hidden;
     top: 50px;
     left: 0px;
+    /* From https://css.glass */
+    background: rgba(55, 65, 81, 0.24);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(55, 65, 81, 0.04);
   }
   .nav > .nav-links > a {
     display: block;
-    width: 100%;
+    width: fit-content;
   }
   .nav > #nav-check:not(:checked) ~ .nav-links {
     height: 0px;
   }
   .nav > #nav-check:checked ~ .nav-links {
     height: calc(100vh - 50px);
+    /* height: 200px; */
     overflow-y: auto;
   }
 }
