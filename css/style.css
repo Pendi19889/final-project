@@ -340,7 +340,7 @@ body {
     height: 300px;
     width: 300px;
     position: absolute;
-    background: -o-linear-gradient(315deg, #ff5b84, #eb3461);
+    /* background: -o-linear-gradient(315deg, #ff5b84, #eb3461); */
     background: linear-gradient(135deg, #ff5b84, #eb3461);
     border-radius: 50%;
     z-index: -10;
@@ -352,12 +352,10 @@ body {
     height: 300px;
     width: 300px;
     position: absolute;
-    background: -o-linear-gradient(315deg, #426cf8, #3ebdf0);
+    /* background: -o-linear-gradient(315deg, #426cf8, #3ebdf0); */
     background: linear-gradient(135deg, #426cf8, #3ebdf0);
     border-radius: 50%;
     z-index: -10;
-    right: -10%;
-    bottom: -20%;
   }
 
   .nav {
