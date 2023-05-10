@@ -9,8 +9,15 @@ navbar_link.forEach((navlink) => {
 });
 
 const targetelements = cards.forEach((card) => {
-  //   console.log(card);
+  card.classList.add("loading");
 });
+
+function keatas() {
+  scroll({
+    top: 0,
+    behavior: "smooth",
+  });
+}
 
 function lazyLoadImg() {
   //menentukan element yang akan memicu lazyload
@@ -18,6 +25,7 @@ function lazyLoadImg() {
   imgTargets.forEach((target) => {
     //menggambil data image setiap element
     const targetImg = target.querySelectorAll("img");
+
     const lazyLoad = (target) => {
       const io = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
@@ -32,7 +40,27 @@ function lazyLoadImg() {
       });
       io.observe(target);
     };
+
     targetImg.forEach(lazyLoad);
   });
 }
 lazyLoadImg();
+
+function effect() {
+  const targeteffect = document.querySelectorAll(".loading");
+  const effect = (targeteffect) => {
+    const io = new IntersectionObserver((entrieseffect, observereffect) => {
+      entrieseffect.forEach((entryeffect) => {
+        if (entryeffect.isIntersecting) {
+          targeteffect.classList.remove("loading");
+          targeteffect.classList.add("loaded");
+          //   console.log(entrieseffect, targeteffect);
+          observereffect.disconnect();
+        }
+      });
+    });
+    io.observe(targeteffect);
+  };
+  targeteffect.forEach(effect);
+}
+effect();

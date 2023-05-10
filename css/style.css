@@ -6,6 +6,9 @@
   box-sizing: border-box;
   /* border: solid 1px red; */
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   position: relative;
@@ -326,7 +329,6 @@ body {
 }
 
 #dot5 {
-  /* content: "Top"; */
   position: fixed;
   border-radius: 9999px;
   width: 50px;
@@ -334,8 +336,10 @@ body {
   bottom: 20px;
   right: 20px;
   z-index: 10;
-  border: solid 3px red;
+  cursor: pointer;
   padding: 5px;
+  background-color: transparent;
+  border: 0px;
 }
 #dot5 > img {
   width: 100%;
@@ -375,6 +379,43 @@ body {
   height: 70px;
 }
 /* akhir bagian body css */
+/* effect */
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.loading {
+  opacity: 0;
+}
+
+.loaded {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  opacity: 1;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
 
 /* css untuk resposive */
 @media (max-width: 800px) {
