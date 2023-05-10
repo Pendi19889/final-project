@@ -22,39 +22,59 @@
       </div>
 
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experiences">Experiences</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#interests">Interests</a>
-        <a href="#award">Award</a>
-        <a href="#daftar-kontak">Contact me</a>
+        <div class="link-a">
+          <a href="#about">About</a>
+        </div>
+        <!-- <div class="link-a">
+          <a href="#experiences">Experiences</a>
+        </div> -->
+        <div class="link-a">
+          <a href="#education">Education</a>
+        </div>
+        <div class="link-a">
+          <a href="#skills">Skills</a>
+        </div>
+        <div class="link-a">
+          <a href="#interests">Interests</a>
+        </div>
+        <!-- <div class="link-a">
+          <a href="#award">Award</a>
+        </div> -->
+        <div class="link-a">
+          <a href="#daftar-kontak">Contact me</a>
+        </div>
       </div>
     </div>
 
-    <!-- <span id="dot1"></span>
-    <span id="dot2"></span> -->
+    <span id="dot1"></span>
+    <span id="dot2"></span>
+    <span id="dot3"></span>
+    <span id="dot4"></span>
+    <span id="dot5">
+      <img src="/img/up.svg" alt="" />
+    </span>
+
     <div class="container">
       <div id="about" class="card">
-        <div class="card-head">Welcome, to my site</div>
-        <div class="card-body">
+        <h1 id="about-title" class="card-head">Welcome, to my site</h1>
+        <div id="about-body" class="card-body">
           Halo, saya pendi widodo seorang web frontend jika anda tertarik dengan
           website buatan saya bisa kontak saya
         </div>
         <div class="card-footer"></div>
       </div>
-      <div id="experiences">
+      <!-- <div id="experiences">
         <div class="card"></div>
         <div class="card"></div>
-      </div>
+      </div> -->
       <div id="education" class="card">
-        <div id="title-education">My Education</div>
-        <div id="body-education">
+        <div class="card-head">My Education</div>
+        <div class="card-body">
           <div class="card">
-            <div class="card-head">
-              <img src="/img/smpn5.jpeg" alt="" />
+            <div class="card-head-picture">
+              <img src="" data-src="/img/smpn5.jpeg" alt="" />
+              <span class="nama-sekolah"> SMPN 5 Cikarang Utara </span>
             </div>
-            <span class="nama-sekolah"> SMPN 5 Cikarang Utara </span>
             <span> Alamat : </span>
             <div class="alamat">
               Jl. Setia Budi No.9, RW.4, Karangasih, Kec. Cikarang Utara,
@@ -62,10 +82,10 @@
             </div>
           </div>
           <div class="card">
-            <div class="card-head">
-              <img src="/img/smkpujabangsa.jpeg" alt="" />
+            <div class="card-head-picture">
+              <img src="" data-src="/img/smkpujabangsa.jpeg" alt="" />
+              <span class="nama-sekolah"> SMK Puja Bangsa </span>
             </div>
-            <span class="nama-sekolah"> SMK Puja Bangsa </span>
             <span> Alamat : </span>
             <div class="alamat">
               Jl. Setia Budi No.37, Karangasih, Kec. Cikarang Utara, Kabupaten
@@ -74,22 +94,84 @@
           </div>
         </div>
       </div>
-      <div id="skills"></div>
-      <div id="interests"></div>
-      <div id="award"></div>
+
+      <div id="skills-interes">
+        <div id="skills" class="card">
+          <div class="card-head">My Skills</div>
+          <div id="skills-body" class="card-body">
+            <div class="card">
+              <div class="card-head-picture">
+                <img src="" data-src="/img/html.png" alt="" />
+                <span class="skills-title">HTML</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-head-picture">
+                <img src="" data-src="/img/css-3.png" alt="" />
+                <span class="skills-title">CSS</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-head-picture">
+                <img src="" data-src="/img/js.png" alt="" />
+                <span class="skills-title">Java Script</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-head-picture">
+                <img src="" data-src="/img/tailwind-css.png" alt="" />
+                <span class="skills-title">Tailwind css</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="interests" class="card">
+          <div class="card-head">
+            <span>My Interests</span>
+          </div>
+          <div id="interests-body" class="card-body">
+            <div class="card">
+              <div class="card-head-picture">
+                <img src="" data-src="/img/Laravel-Logo.png" alt="" />
+                <span>Laravel Framework</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-head-picture">
+                <img src="" data-src="/img/reacjs.png" alt="" />
+                <span>ReactJs Framework</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-head-picture">
+                <img src="" data-src="/img/animejs.png" alt="" />
+                <span>Animejs</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-head-picture">
+                <img src="" data-src="/img/mysql.png" alt="" />
+                <span>Mysql</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="award"></div> -->
       <div id="daftar-kontak" class="card">
-        <div id="daftar-kontak-head">My Contact</div>
-        <div id="daftar-kontak-body">
+        <div class="card-head">My Contact</div>
+        <div class="card-body">
           <div class="card">
-            <img src="/img/Whatsapp.png" alt="Icon Whatsapp" />
-            <a href="https://wa.me/085888228528">085888228528</a>
+            <img src="" data-src="/img/Whatsapp.png" alt="Icon Whatsapp" />
+            <a href="https://wa.me/085888228528"></a>
           </div>
           <div class="card">
-            <img src="/img/linkedin.png" alt="Icon Linkedin" />
+            <img src="" data-src="/img/linkedin.png" alt="Icon Linkedin" />
+            <a href="#"></a>
           </div>
           <div class="card">
-            <img src="/img/gmail.png" alt="Icon Gmail" />
-            <a href="mailto:pendiwidodo5@gmail.com">pendiwidodo5@gmail.com</a>
+            <img src="" data-src="/img/gmail.png" alt="Icon Gmail" />
+            <a href="mailto:pendiwidodo5@gmail.com"></a>
           </div>
         </div>
       </div>

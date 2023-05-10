@@ -8,23 +8,26 @@
 }
 
 body {
+  position: relative;
   margin: 0px;
   color: var(--white);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow-x: hidden;
   overflow-y: scroll;
-  background: rgb(249, 93, 255);
+
+  /* background: rgb(249, 93, 255);
   background: linear-gradient(
     45deg,
     rgba(249, 93, 255, 1) 30%,
     rgba(81, 226, 255, 1) 100%
-  );
+  ); */
+
+  background: #161623;
   background-repeat: no-repeat;
 }
 
 .nav {
-  height: 50px;
   width: 100%;
   position: relative;
   display: flex;
@@ -37,6 +40,7 @@ body {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(0, 0, 0, 0.04);
+  z-index: 10;
 }
 
 .nav > .nav-header {
@@ -56,12 +60,14 @@ body {
 }
 
 .nav > .nav-links {
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  /* display: inline; */
   float: right;
   font-size: 20px;
 }
 
-.nav > .nav-links > a {
+.nav > .nav-links > .link-a > a {
   display: inline-block;
   margin: 13px 10px 13px 10px;
   text-decoration: none;
@@ -69,11 +75,11 @@ body {
   font-weight: 500;
 }
 
-.nav > .nav-links > a {
+.nav > .nav-links > .link-a > a {
   display: inline-block;
   position: relative;
 }
-.nav > .nav-links > a:after {
+.nav > .nav-links > .link-a > a:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -85,7 +91,7 @@ body {
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
-.nav > .nav-links > a:hover:after {
+.nav > .nav-links > .link-a > a:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -93,16 +99,91 @@ body {
 .nav > #nav-check {
   display: none;
 }
-/* ini css bagian body */
+
+/* ini css bagian container */
 .container {
   width: 80%;
   display: flex;
   flex-direction: column;
   margin: auto;
-  /* z-index: 0; */
+  align-items: center;
 }
+
 .container > div {
   margin-bottom: 20px;
+}
+
+/* style cards */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  margin: auto;
+  /* From https://css.glass */
+  background: rgba(55, 65, 81, 0.32);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(55, 65, 81, 0.04);
+}
+
+.card > div {
+  margin-bottom: 10px;
+}
+
+.card-head {
+  display: flex;
+  justify-content: flex-start;
+  font-size: xx-large;
+  font-weight: 600;
+  margin: 20px;
+}
+
+.card-head-picture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.card-head-picture > img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.card-head-picture > span {
+  padding: 10px 1rem 8px 1rem;
+  text-align: center;
+  font-size: large;
+  font-weight: 600;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: row;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: left;
+  /* font-weight: 200; */
+  /* color: #f9fafb; */
+}
+.card-footer {
+  padding: 0px 16px 10px 16px;
+}
+
+#about {
+  font-size: large;
+}
+
+#about > #about-title {
+  display: flex;
+  justify-content: center;
+}
+
+#about-body {
+  text-align: center;
 }
 
 #experiences {
@@ -116,85 +197,78 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+
 #title-education {
   margin: 20px;
   font-weight: 600;
   font-size: x-large;
 }
-#body-education {
-  display: flex;
-  flex-direction: row;
-}
 .nama-sekolah {
   font-weight: 400;
   font-size: x-large;
 }
-#education > #body-education > .card {
+#education > .card-body > .card {
   width: 50%;
   display: flex;
   flex-direction: column;
   margin: 30px;
+  padding: 10px 20px 10px 20px;
 }
-#education > #body-education > span {
-  margin: 10px;
-  display: inline;
-}
-#education > #body-education > .card > .card-head > img {
+
+#education > .card-body > .card > .card-head-picture > img {
   width: 200px;
   height: 200px;
   object-fit: cover;
   margin: 20px 10px 10px 10px;
   border-radius: 10px;
 }
-#education > #body-education > .card > .alamat {
+#education > .card-body > .card > .alamat {
   text-align: center;
   padding: 10px;
 }
-#education > #body-education > .card > span {
+#education > .card-body > .card > span {
   margin: 5px 10px 5px 10px;
 }
 
 #skills {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-.card {
-  border-radius: 8px;
-  overflow: hidden;
-  margin: auto;
-  /* From https://css.glass */
-  background: rgba(55, 65, 81, 0.32);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(55, 65, 81, 0.04);
-  z-index: -5;
+#skills > #skills-body {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
 }
 
-.card > div {
-  margin-bottom: 10px;
+#skills > #skills-body > div {
+  width: 200px;
+  height: 200px;
 }
 
-.card-head {
+#skills-interes {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 10px 16px 8px 16px;
-  font-size: xx-large;
-  font-weight: 600;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.card-body {
-  padding-left: 16px;
-  padding-right: 16px;
-  /* font-weight: 200; */
-  /* color: #f9fafb; */
-}
-.card-footer {
-  padding: 0px 16px 10px 16px;
+#interests-body {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
 }
 
+#interests-body > div {
+  width: 200px;
+  height: 200px;
+}
+
+/* syle dots */
 #dot1 {
   height: 400px;
   width: 400px;
@@ -203,139 +277,174 @@ body {
   background: linear-gradient(135deg, #ff5b84, #eb3461);
   border-radius: 50%;
   z-index: -10;
-  top: -20%;
+  top: 0%;
   left: -10%;
 }
 
 #dot2 {
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   position: absolute;
   background: -o-linear-gradient(315deg, #426cf8, #3ebdf0);
   background: linear-gradient(135deg, #426cf8, #3ebdf0);
   border-radius: 50%;
   z-index: -10;
   right: -5%;
-  bottom: -30%;
+  bottom: 0%;
+}
+
+#dot3 {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -10;
+  top: 20%;
+  right: 5%;
+  background: rgb(228, 228, 228);
+  background: linear-gradient(
+    90deg,
+    rgba(228, 228, 228, 0.7035013834635417) 30%,
+    rgba(230, 235, 236, 0.8631652490097601) 100%
+  );
+}
+
+#dot4 {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -10;
+  bottom: 20%;
+  left: 15%;
+  background: rgb(228, 228, 228);
+  background: linear-gradient(
+    90deg,
+    rgba(228, 228, 228, 0.7035013834635417) 30%,
+    rgba(230, 235, 236, 0.8631652490097601) 100%
+  );
+}
+
+#dot5 {
+  /* content: "Top"; */
+  position: fixed;
+  border-radius: 9999px;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  border: solid 3px red;
+  padding: 5px;
+}
+#dot5 > img {
+  width: 100%;
+  height: 100%;
+}
+
+#dot5 > img > svg {
+  background-color: white;
 }
 
 /* daftar kontak dan antek anteknya versi pc*/
 #daftar-kontak {
   margin-top: 30px;
-  width: 100%;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
-}
-#daftar-kontak-head {
-  margin: 20px;
-  font-weight: 600;
-  font-size: x-large;
-}
-#daftar-kontak-body {
-  display: flex;
-  flex-direction: row;
-  justify-items: flex-start;
+  width: 50%;
 }
 
-#daftar-kontak > #daftar-kontak-body > .card {
+#daftar-kontak > .card-body > .card {
   display: flex;
+  position: relative;
   align-items: center;
-  width: fit-content;
-  z-index: 10;
-  margin-bottom: 10px;
-}
-#daftar-kontak > #daftar-kontak-body > .card > a {
-  display: block;
-  margin-right: 20px;
-  color: #f8fafc;
+  justify-content: space-evenly;
 }
 
-#daftar-kontak > #daftar-kontak-body > .card > img {
-  margin: 20px;
-  width: 30px;
-  height: 30px;
+#daftar-kontak > .card-body > .card > a {
+  position: absolute;
+  color: #f8fafc;
+  width: 100%;
+  height: 100%;
+}
+
+#daftar-kontak > .card-body > .card > img {
+  margin: 10px;
+  width: 70px;
+  height: 70px;
 }
 /* akhir bagian body css */
 
 /* css untuk resposive */
 @media (max-width: 800px) {
-  /* education dan antek anteknya versi responsive */
+  /* !!education dan antek anteknya versi responsive */
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    /* padding-left: 16px; */
+    /* padding-right: 16px; */
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    /* font-weight: 200; */
+    /* color: #f9fafb; */
+  }
+  .container {
+    /* margin-top: 80px; */
+  }
   #education {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  #title-education {
-    margin: 20px;
-    font-weight: 600;
-    font-size: x-large;
-  }
+
   #body-education {
     display: flex;
     flex-direction: column;
   }
-  #education > #body-education > .card {
-    width: 80%;
+
+  #education > .card-body > .card {
+    width: fit-content;
     display: flex;
     flex-direction: column;
-    margin: 30px;
   }
-  #education > #body-education > span {
-    margin: 10px;
-    display: inline;
-  }
-  #education > #body-education > .card > .card-head > img {
-    width: 200px;
-    height: 200px;
+
+  #education > .card-body > .card > .card-head-picture > img {
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    margin: 10px;
-    border-radius: 10px;
   }
-  #education > #body-education > .card > .alamat {
-    text-align: center;
-    padding: 10px;
+
+  #education > .card-body > .card > .card-head-picture > span {
+    width: 100%;
   }
-  #education > #body-education > .card > span {
-    margin: 5px 10px 5px 10px;
+
+  #skills > #skills-body > div {
+    width: 150px;
+    height: 200px;
+  }
+
+  #skills-interes {
+    display: flex;
+    flex-direction: column;
+  }
+  #skills-interes > div {
+    margin-bottom: 40px;
+  }
+
+  #interests > #interests-body > div {
+    width: 150px;
+    height: 200px;
   }
 
   /* daftar kontak dan antek anteknya versi responsive */
   #daftar-kontak {
-    margin-top: 30px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
   }
-  #daftar-kontak-head {
-    margin: 20px;
-    font-weight: 600;
-    font-size: x-large;
+  #daftar-kontak > .card-body {
+    flex-direction: row;
   }
-  #daftar-kontak-body {
-    display: flex;
-    flex-direction: column;
-    justify-items: flex-start;
-  }
-
-  #daftar-kontak > #daftar-kontak-body > .card {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    z-index: 10;
-    margin-bottom: 10px;
-  }
-  #daftar-kontak > #daftar-kontak-body > .card > a {
-    display: block;
-    margin-right: 20px;
-    color: #f8fafc;
-  }
-
-  #daftar-kontak > #daftar-kontak-body > .card > img {
-    margin: 20px;
-    width: 30px;
-    height: 30px;
-  }
-
   #dot1 {
     height: 300px;
     width: 300px;
@@ -343,8 +452,7 @@ body {
     /* background: -o-linear-gradient(315deg, #ff5b84, #eb3461); */
     background: linear-gradient(135deg, #ff5b84, #eb3461);
     border-radius: 50%;
-    z-index: -10;
-    top: -10%;
+    top: 0%;
     left: -20%;
   }
 
@@ -355,12 +463,14 @@ body {
     /* background: -o-linear-gradient(315deg, #426cf8, #3ebdf0); */
     background: linear-gradient(135deg, #426cf8, #3ebdf0);
     border-radius: 50%;
-    z-index: -10;
+    bottom: 0%;
   }
 
   .nav {
+    position: relative;
     width: 100%;
     overflow: visible;
+    z-index: 10;
   }
 
   .nav > .nav-btn {
@@ -396,14 +506,26 @@ body {
     top: 50px;
     left: 0px;
     /* From https://css.glass */
-    background: rgba(55, 65, 81, 0.24);
+    background: rgba(55, 65, 81, 0.4);
     /* border-radius: 16px; */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(55, 65, 81, 0.04);
+    border: 1px solid rgba(55, 65, 81, 0.15);
   }
-  .nav > .nav-links > a {
+  .nav > .nav-links > .link-a {
+    border-bottom: solid rgba(241, 245, 249, 0.1) 1px;
+    margin: 0px 5px 0px 5px;
+  }
+  /* .nav > .nav-links > .link-a:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  } */
+  .nav > .nav-links > .link-a > a {
     display: block;
     width: fit-content;
   }
