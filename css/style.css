@@ -431,9 +431,6 @@ body {
     /* font-weight: 200; */
     /* color: #f9fafb; */
   }
-  .container {
-    /* margin-top: 80px; */
-  }
   #education {
     display: flex;
     flex-direction: column;
