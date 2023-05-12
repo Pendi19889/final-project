@@ -191,7 +191,12 @@ body {
 
 #experiences {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+#exp-desc {
+  padding: 20px;
+  font-size: x-large;
 }
 
 /* education dan antek anteknya versi pc */
@@ -269,6 +274,12 @@ body {
 #interests-body > div {
   width: 200px;
   height: 200px;
+}
+
+#award-desc {
+  padding: 10px;
+  font-size: large;
+  text-align: center;
 }
 
 /* syle dots */
